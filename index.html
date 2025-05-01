@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>llins</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop id="bg-music">
+    <source src="images/audio1.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Profile Picture + Heading -->
+  <div class="profile-header fade-in">
+    <img src="images/c2.png" alt="Profile Photo" class="profile-pic" />
+    <h1>llins Anatomy</h1>
+  </div>
+
+  <!-- Password Input -->
+  <div class="password-gate fade-in" id="passwordGate">
+    <p>Enter Password:</p>
+    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <button onclick="checkPassword()">Enter</button>
+    <div class="floating-message">Smooth sea never made a skilled sailor.</div>
+  </div>
+
+  <!-- Dark Theme Toggle (hidden until login) -->
+  <button id="themeToggle" style="display: none;">Dark Theme</button>
+
+  <!-- Albums Section -->
+  <div id="mainContent" style="display: none;" class="fade-in">
+
+    <!-- Young Me -->
+    <h2>Young Me</h2>
+    <div class="gallery-row">
+      <img src="images/young-me/me7.jpg" alt="Young Me 1">
+      <p class="caption">selfies..."such a classic ting during the 22 era</p>
+      <img src="images/young-me/me9.jpg" alt="Young Me 2">
+      <p class="caption">rare picture of little me smiling..finnest days at 2015</p>
+    </div>
+
+    <!-- 2023 -->
+    <h2>2023</h2>
+    <div class="gallery-row">
+      <img src="images/2023/me.jpg" alt="2023s-1">
+      <p class="caption">crazy me taking lunch</p>
+      <img src="images/2023/me17.jpg" alt="2023-2">
+      <p class="caption">hold on now</p>
+      <img src="images/2023/me2.jpg" alt="2023-3">
+      <p class="caption">...</p>
+      <img src="images/2023/me22.jpg" alt="2023-4">
+      <p class="caption">...</p>
+      <img src="images/2023/me4.jpg" alt="2023-5">
+      <p class="caption">...</p>
+      <img src="images/2023/me5.jpg" alt="2023-6">
+      <p class="caption">trying my best to change my life that actually looks like its going no where</p>
+      <img src="images/2023/me8.jpg" alt="2023-7">
+      <p class="caption">bike ride here & there,f*ck them haters</p>
+    </div>
+
+    <!-- 2024 -->
+    <h2>2024</h2>
+    <div class="gallery-row">
+      <img src="images/2024/me3.jpg" alt="2024-1">
+      <p class="caption">shags Elgeyo marakwet Nature walk</p>
+      <img src="images/2024/me11.jpg" alt="2024-2">
+      <p class="caption">ahh,them beards not growing</p>
+      <img src="images/2024/me6.jpg" alt="2024-3">
+      <p class="caption">lil bro telling me to do my best"sensational"</p>
+      <img src="images/2024/4.jpg" alt="2024-4">
+      <img src="images/2024/5.jpg" alt="2024-5">
+    </div>
+
+    <!-- 2025 -->
+    <h2>2025</h2>
+    <div class="gallery-row">
+      <img src="images/2025/me12.jpg" alt="2025-1">
+      <p class="caption">nigga</p>
+      <img src="images/2025/me20.jpg" alt="2025-2">
+      <p class="caption">can someones daughter fall for this guy</p>
+      <img src="images/2025/me13.jpg" alt="2025-3">
+      <p class="caption">loading...</p>
+      <img src="images/2025/me21.jpg" alt="2025-4">
+      <p class="caption">may God be with my family</p>
+      <img src="images/2025/me23.jpg" alt="2025-5">
+      <p class="caption">my life is becoming a meme</p>
+      <img src="images/2025/me24.jpg" alt="2025-6">
+      <p class="caption">...mboka</p>
+      <img src="images/2025/me88.jpg" alt="2025-7">
+      <p class="caption">fuck me</p>
+      <img src="images/2025/me25.jpg" alt="2025-8">
+      <p class="caption">short nigga all day</p>
+      <img src="images/2025/d2.jpg" alt="2025-9">
+      <p class="caption">a day with them friends...</p>
+      <div class="image-container">
+        <video controls>
+          <source src="images/2025/codm.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="caption">exited for codm</p>
+      </div>
+      <div class="image-container">
+        <video controls>
+          <source src="images/2025/vid1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="caption">me creating this website"proud of my self"</p>
+      </div>
+    </div>
+
+    <!-- Them Ex's -->
+    <h2>Them Ex's</h2>
+    <div class="gallery-row">
+      <img src="images/them-exs/ex.jpg" alt="Ex 1">
+      <p class="caption">Joy Wilfrey...beautiful of them all,loved for months</p>
+      <img src="images/them-exs/ex2.jpg" alt="Ex 2">
+      <p class="caption">Daniella...was always my favourite,the form 2 fantasy</p>
+      <img src="images/them-exs/ex5.jpg" alt="Ex 3">
+      <p class="caption">vicky...too much caring of them all but two men cant sail the same boat</p>
+      <img src="images/them-exs/4.jpg" alt="Ex 4">
+      <img src="images/them-exs/5.jpg" alt="Ex 5">
+    </div>
+
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const correctPassword = "yourpassword"; // Replace with your real password
+
+      if (input === correctPassword) {
+        document.getElementById("passwordGate").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        document.getElementById("themeToggle").style.display = "block";
+      } else {
+        alert("You placed the wrong password Nigga!");
+      }
+    }
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+    });
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
